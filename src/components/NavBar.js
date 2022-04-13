@@ -1,12 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { Bars, NavMenu, NavBtn, NavBtnLink } from './NavBarElements';
+
 
 export default function NavBar() {
   return (
     <header className="bg-red-600">
       <div className="container mx-auto flex justify-between">
         <nav className="flex">
+
           <NavLink
             to="/"
             exact
@@ -15,6 +18,10 @@ export default function NavBar() {
           >
             Home
           </NavLink>
+
+          <Bars />
+          <NavMenu>
+
           <NavLink
             to="/about"
             className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
@@ -30,27 +37,37 @@ export default function NavBar() {
             Portfolio
           </NavLink>
           <NavLink
-            to="/certification"
+            to="/post"
             className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
             activeClassName="text-red-100 bg-red-700"
           >
-            Courses & Certification
+            Blogs Posts
           </NavLink>
           <NavLink
-            to="/contact"
+            to="/courses"
             className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
             activeClassName="text-red-100 bg-red-700"
           >
-            Contact
+            Courses
           </NavLink>
+          <NavLink
+            to="/certifications"
+            className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
+            activeClassName="text-red-100 bg-red-700"
+          >
+            Certifications
+          </NavLink>
+
+          </NavMenu>
+
+          <NavBtn>
+            <NavBtnLink as="a" href="https://www.linkedin.com/in/sara-binte-zinnat-787942b9" target="_blank"><FaLinkedinIn /></NavBtnLink>
+             <NavBtnLink as="a" href="https://github.com/sara-zinnat" target="_blank"><FaGithub /> </NavBtnLink>
+            <NavBtnLink as="a" href="https://www.instagram.com/sara_shifa_deen" target="_blank"><FaInstagram /></NavBtnLink>
+            <NavBtnLink as="a" href="mailto:shazsara20@gmail.com" target="_blank"><FaEnvelope /></NavBtnLink>
+          </NavBtn>
+
         </nav>
-
-
-        <div className="inline-flex py-3 px-3 my-6">
-          <FaLinkedinIn />
-          <FaGithub />
-          <FaInstagram />
-        </div>
 
 
       </div>

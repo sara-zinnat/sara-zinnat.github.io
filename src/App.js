@@ -2,9 +2,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
-import Certification from "./components/Certification";
-import Contact from "./components/Contact";
+import Post from "./components/Post";
+import SinglePost from "./components/SinglePost";
+import Certifications from "./components/Certifications";
+import Courses from "./components/Courses";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,10 +17,14 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/portfolio' element={<Portfolio />} />
-        <Route path='/certification' element={<Certification />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/post/:slug' element={<SinglePost />} />
+        <Route path='/post' element={<Post />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/certifications' element={<Certifications />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
+
   )
 }
 
