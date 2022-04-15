@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
-import plumeria from "../my-click-sara.jpg";
+import sara_about from "../my-click-sara.jpg";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -28,13 +28,17 @@ export default function About() {
 
   return (
     <main className="relative">
-      <img src={plumeria} alt="Plumeria Flower" className="absolute w-full" />
+      <img
+          src={sara_about}
+          alt="Background Image"
+          className="absolute object-cover w-full h-full"
+      />
       <div className="p-10 lg:pt-48 container mx-auto relative">
         <section className="bg-green-800 rounded-lg shadow-2xl lg:flex p-20">
           <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
-            alt="Kapehe"
+            alt="Sara"
           />
           <div className="text-lg flex flex-col justify-center">
             <h1 className="cursive text-6xl text-green-300 mb-4">
