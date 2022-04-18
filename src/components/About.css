@@ -1,3 +1,9 @@
 .myBio {
         background-color: #DDC7B1;
     }
+
+.myBorder{
+  border-style: dashed;
+    border-width: 3px;
+    border-color: black;
+}
