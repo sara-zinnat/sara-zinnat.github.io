@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import sara_about from "../my-click-sara.jpg";
+import BlockContent from "@sanity/block-content-to-react";
 import './About.css';
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -16,7 +17,7 @@ export default function About() {
       .fetch(
         `*[_type == "author"]{
           name,
-          "bio": bio[0].children[0].text,
+          bio,
           "authorImage": image.asset->url
       }`
       )
@@ -53,7 +54,11 @@ export default function About() {
       </div>
 
       <div className ="container mx-auto relative flex justify-center myBio" >
-        <p className="text-black text-lg flex justify-center">{author.bio}</p>
+        <BlockContent
+          blocks={author.bio}
+          projectId="sa764pyc"
+          dataset="production"
+        />
       </div>
 
       <br />
