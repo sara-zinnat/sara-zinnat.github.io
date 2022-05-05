@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import './About.css';
+import BlockContent from "@sanity/block-content-to-react";
+
+const serializers = {
+  marks: {
+    link: ({ children, mark }) =>
+      mark.blank ? (
+        <a href={mark.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold hover:underline hover:text-blue-900">
+          {children}
+        </a>
+      ) : (
+        <a href={mark.href} className="text-blue-500 font-bold hover:underline hover:text-blue-900">
+          {children}
+        </a>
+      )
+  }
+}
 
 export default function Portfolio() {
   const [projectData, setProjectData] = useState(null);
@@ -57,7 +73,13 @@ export default function Portfolio() {
                     {project.projectType}
                   </span>
                   <p className="my-6 text-lg text-gray-700 leading-relaxed">
-                    {project.description}
+
+                    <BlockContent
+                      blocks={project.description}
+                      projectId="sa764pyc"
+                      dataset="production"
+                      serializers={serializers}
+                    />
                   </p>
                   <a
                     href={project.link}

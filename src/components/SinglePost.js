@@ -5,6 +5,21 @@ import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import './About.css';
 
+const serializers = {
+  marks: {
+    link: ({ children, mark }) =>
+      mark.blank ? (
+        <a href={mark.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold hover:underline hover:text-blue-900">
+          {children}
+        </a>
+      ) : (
+        <a href={mark.href} className="text-blue-500 font-bold hover:underline hover:text-blue-900">
+          {children}
+        </a>
+      )
+  }
+}
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -71,6 +86,7 @@ export default function SinglePost() {
             blocks={singlePost.body}
             projectId="sa764pyc"
             dataset="production"
+            serializers={serializers}
           />
         </div>
       </article>

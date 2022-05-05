@@ -9,6 +9,21 @@ function urlFor(source) {
   return builder.image(source);
 }
 
+const serializers = {
+  marks: {
+    link: ({ children, mark }) =>
+      mark.blank ? (
+        <a href={mark.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold hover:underline hover:text-blue-900">
+          {children}
+        </a>
+      ) : (
+        <a href={mark.href} className="text-blue-500 font-bold hover:underline hover:text-blue-900">
+          {children}
+        </a>
+      )
+  }
+}
+
 export default function About() {
   const [author, setAuthor] = useState(null);
 
@@ -58,6 +73,7 @@ export default function About() {
           blocks={author.bio}
           projectId="sa764pyc"
           dataset="production"
+          serializers={serializers}
         />
       </div>
 
