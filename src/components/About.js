@@ -53,7 +53,7 @@ export default function About() {
       <div className="p-10 lg:pt-40 container mx-auto relative flex justify-center">
         <img
           src={urlFor(author.authorImage).url()}
-          className="w-32 h-32 rounded-full flex justify-center"
+          className="w-40 rounded-full justify-center"
           alt="Sara"
         />
       </div>
