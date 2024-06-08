@@ -422,7 +422,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -686,13 +686,13 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services
+# Award
 --------------------------------------------------------------*/
-.services .icon-box {
+.award .icon-box {
   margin-bottom: 20px;
 }
 
-.services .icon {
+.award .icon {
   float: left;
   display: flex;
   align-items: center;
@@ -705,36 +705,36 @@ section {
   border: 1px solid #149ddd;
 }
 
-.services .icon i {
+.award .icon i {
   color: #fff;
   font-size: 24px;
   line-height: 0;
 }
 
-.services .icon-box:hover .icon {
+.award .icon-box:hover .icon {
   background: #fff;
 }
 
-.services .icon-box:hover .icon i {
+.award .icon-box:hover .icon i {
   color: #149ddd;
 }
 
-.services .title {
+.award .title {
   margin-left: 80px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
-.services .title a {
+.award .title a {
   color: #343a40;
 }
 
-.services .title a:hover {
+.award .title a:hover {
   color: #149ddd;
 }
 
-.services .description {
+.award .description {
   margin-left: 80px;
   line-height: 24px;
   font-size: 14px;
